@@ -12,22 +12,36 @@ public class StorageTest {
 		Storage s = new Storage();
 		s.setTemp(temp);
 		
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 2; i++) {
 			assertEquals(temp[i], s.readTemp(i), (float)0.1);
 		}
-		
-		
-		fail("Not yet implemented");
+						
 	}
 	
 	@Test
 	public void testSetAndReadVolt() {
-		fail("Not yet implemented");
+		float[] volt = {(float) 100.2, (float) 200.1, (float) 300.0};
+		
+		Storage s = new Storage();
+		s.setVolt(volt);
+		
+		for (int i = 0; i < 2; i++) {
+			assertEquals(volt[i], s.readVolt(i), (float)0.1);
+		}
+				
 	}
 	
 	@Test
 	public void testSetAndReadCurrent() {
-		fail("Not yet implemented");
+		float[] current = {(float) 300.2, (float) 250.1, (float) 345.8};
+		
+		Storage s = new Storage();
+		s.setCurrent(current);
+		
+		for (int i = 0; i < 2; i++) {
+			assertEquals(current[i], s.readCurrent(i), (float)0.1);
+		}
+		
 	}
 	
 	@Test
